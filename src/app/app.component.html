@@ -1,0 +1,12 @@
+<button (click)="openDialog()">
+  Open me
+</button>
+<app-barcode-scanner-dialog
+  #barcodeScannerDialog
+  [headerTitle]="'Scan material by camera'"
+  [scannedItemsLabel]="'materials scanned'"
+  [scanErrorMessage]="'Material number does not exist'"
+  [alreadyScannedSnack]="'Material was already added.'"
+  [scannedSuccessfulSnack]="'Material added.'"
+>
+</app-barcode-scanner-dialog>

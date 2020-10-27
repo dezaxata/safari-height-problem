@@ -1,0 +1,22 @@
+@import "breakpoints";
+
+.custom-dialog {
+  mat-dialog-container {
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing.custom-dialog-backdrop {
+  opacity: 0.12;
+  background: var(--cicero-cloud-grey);
+}
+
+@media ($cloud-xtra-small) {
+  .custom-dialog {
+    mat-dialog-container {
+      border-radius: 0px;
+    }
+  }
+}
