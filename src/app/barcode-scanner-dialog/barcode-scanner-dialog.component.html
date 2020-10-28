@@ -1,33 +1,28 @@
 <ng-template #barcodeScannerTemplate>
-  <app-content-dialog>
-    <div header class="header-container">
-      <h2 class="header-title">{{ headerTitle }}</h2>
-      <button (click)="closeDialog()">
+	<app-content-dialog>
+		<div header class="header-container">
+			<h2 class="header-title">{{ headerTitle }}</h2>
+			<button (click)="closeDialog()">
         Close
       </button>
-    </div>
+		</div>
 
-    <div content class="scanner-container">
-      <div style="height: 100%; background-color:green"></div>
-      <app-barcode-scanner-feedback
-        style="display:none"
-        [scanErrorMessage]="scanErrorMessage"
-        [alreadyScannedSnack]="alreadyScannedSnack"
-        [scannedSuccessfulSnack]="scannedSuccessfulSnack"
-        id="camera-barcode-scanner-feedback"
-        #feedbackComponent
-      >
-      </app-barcode-scanner-feedback>
-    </div>
-    <div footer class="actions-container">
-      <div>
-        <p class="scanned-items-label" *ngIf="cameraFound && cameraPermission">
-          {{ numberOfBarcodesScanned }} {{ scannedItemsLabel }}
-        </p>
-      </div>
-      <button mat-stroked-button matDialogClose>
+		<div content class="scanner-container">
+			<div class="scanner-replacement"></div>
+			<app-barcode-scanner-feedback style="display:none" [scanErrorMessage]="scanErrorMessage"
+				[alreadyScannedSnack]="alreadyScannedSnack" [scannedSuccessfulSnack]="scannedSuccessfulSnack"
+				id="camera-barcode-scanner-feedback" #feedbackComponent>
+			</app-barcode-scanner-feedback>
+		</div>
+		<div footer class="actions-container">
+			<div>
+				<p class="scanned-items-label" *ngIf="cameraFound && cameraPermission">
+					{{ numberOfBarcodesScanned }} {{ scannedItemsLabel }}
+				</p>
+			</div>
+			<button mat-stroked-button matDialogClose>
         Done
       </button>
-    </div>
-  </app-content-dialog>
+		</div>
+	</app-content-dialog>
 </ng-template>

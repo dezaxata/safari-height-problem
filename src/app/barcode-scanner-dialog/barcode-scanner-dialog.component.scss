@@ -21,9 +21,18 @@
 .scanner-container {
   position: relative;
   width: calc(100% - 4px);
-  height: -webkit-fill-available;
   height: calc(100% - 4px);
+  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
   border: 2px red solid;
+}
+
+.scanner-replacement {
+  height: 100%;
+  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
+  background-color: green;
+  border: 2px yellow solid;
 }
 
 .actions-container {
